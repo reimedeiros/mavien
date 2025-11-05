@@ -1,0 +1,92 @@
+<!-- /assets/svg/mavien-hero.svg -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1920"
+  height="600"
+  viewBox="0 0 1920 600"
+  preserveAspectRatio="xMidYMid slice"
+  role="img"
+  aria-hidden="true"
+  style="position:absolute; left:0; top:0; width:100%; height:100%; z-index:-1; pointer-events:none; display:block;"
+>
+  <defs>
+    <!-- Fundo em degradê (paleta A) -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#001F3F"/>
+      <stop offset="60%" stop-color="#003a77"/>
+      <stop offset="100%" stop-color="#0052CC"/>
+    </linearGradient>
+
+    <!-- Gradiente da onda (mais claro) -->
+    <linearGradient id="waveGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4FC3FF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#33A1FF" stop-opacity="0.55"/>
+    </linearGradient>
+
+    <!-- Overlay escuro à esquerda para legibilidade do texto -->
+    <linearGradient id="leftOverlay" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#000000" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Máscara opcional para preservar borda inferior -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="b"/>
+      <feBlend in="SourceGraphic" in2="b" mode="normal"/>
+    </filter>
+  </defs>
+
+  <!-- fundo -->
+  <rect width="1920" height="600" fill="url(#bgGrad)" />
+
+  <!-- overlay escuro esquerdo (para contraste do texto) -->
+  <rect x="0" y="0" width="780" height="600" fill="url(#leftOverlay)" />
+
+  <!-- Camada de ondas (3 camadas, movimentos distintos para profundidade) -->
+  <!-- Camada 1 - mais atrás, movimento lento -->
+  <path fill="url(#waveGrad)" opacity="0.30" filter="url(#softShadow)">
+    <animate attributeName="d" dur="14s" repeatCount="indefinite" values="
+      M0,420 C360,360 720,500 960,460 C1200,420 1560,360 1920,400 L1920,600 L0,600 Z;
+      M0,400 C360,440 720,360 960,420 C1200,480 1560,420 1920,380 L1920,600 L0,600 Z;
+      M0,420 C360,360 720,500 960,460 C1200,420 1560,360 1920,400 L1920,600 L0,600 Z
+    " />
+  </path>
+
+  <!-- Camada 2 - média, movimento médio -->
+  <path fill="url(#waveGrad)" opacity="0.45">
+    <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
+      M0,390 C420,320 780,460 1080,420 C1380,380 1620,340 1920,360 L1920,600 L0,600 Z;
+      M0,370 C420,400 780,320 1080,380 C1380,440 1620,380 1920,340 L1920,600 L0,600 Z;
+      M0,390 C420,320 780,460 1080,420 C1380,380 1620,340 1920,360 L1920,600 L0,600 Z
+    " />
+  </path>
+
+  <!-- Camada 3 - frente, movimento mais rápido e destaque -->
+  <path fill="#33A1FF" opacity="0.65">
+    <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+      M0,360 C480,300 840,420 1200,380 C1560,340 1680,320 1920,340 L1920,600 L0,600 Z;
+      M0,340 C480,380 840,320 1200,360 C1560,400 1680,360 1920,320 L1920,600 L0,600 Z;
+      M0,360 C480,300 840,420 1200,380 C1560,340 1680,320 1920,340 L1920,600 L0,600 Z
+    " />
+  </path>
+
+  <!-- Leves brilhos móveis para dar sensação de profundidade -->
+  <g fill="#BEEBFF" opacity="0.18">
+    <circle cx="1400" cy="120" r="2.4">
+      <animate attributeName="cy" values="120;140;120" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1400;1380;1400" dur="8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1000" cy="210" r="2.6">
+      <animate attributeName="cy" values="210;230;210" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1000;1020;1000" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="500" cy="160" r="2.2">
+      <animate attributeName="cy" values="160;180;160" dur="6.5s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="500;520;500" dur="9s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Pequena faixa translucida na base para suavizar a junção com conteúdo abaixo -->
+  <rect x="0" y="560" width="1920" height="40" fill="rgba(0,0,0,0.06)" />
+</svg>

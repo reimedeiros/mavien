@@ -1,0 +1,165 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* === HEADER GERAL === */
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: #ffffffee;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.site-header.scrolled {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === CONTAINER DO HEADER === */
+.header-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* 🔹 distribui os 3 blocos */
+    padding: 0 2rem;
+    gap: 2rem;
+    /* 🔹 espaçamento uniforme entre logo, menu e botão */
+}
+
+/* === LOGO === */
+.logo {
+    flex: 0 0 auto;
+    /* 🔹 tamanho fixo (não cresce) */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    /* ajusta automaticamente dentro do header */
+    width: auto;
+    object-fit: contain;
+}
+
+/* === MENU DESKTOP === */
+.main-nav {
+    flex: 1;
+    /* 🔹 ocupa o espaço central */
+    display: flex;
+    justify-content: center;
+    /* centraliza o menu */
+}
+
+.menu-items {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-items a {
+    color: #001f3f;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-items a:hover {
+    color: #33a1ff;
+}
+
+/* === BOTÃO CONTRATE === */
+.btn-contrate {
+    flex: 0 0 auto;
+    /* não cresce nem encolhe */
+    background-color: #0052cc;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-contrate:hover {
+    background-color: #003e99;
+}
+
+/* === NAV TOGGLE (MOBILE) === */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.nav-toggle span {
+    width: 26px;
+    height: 3px;
+    background: #001f3f;
+    border-radius: 3px;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 900px) {
+    .header-content {
+        justify-content: space-between;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        z-index: 999;
+        /* garantir que fique acima de outros elementos */
+    }
+
+    .main-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-items {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+}

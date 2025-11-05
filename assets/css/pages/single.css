@@ -1,0 +1,45 @@
+/* === PÁGINAS DE DETALHE (Serviços / Vagas) === */
+.single-service,
+.single-job {
+    padding: 6rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.single-service h1,
+.single-job h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #0a1f33;
+}
+
+.single-service .content,
+.single-job .content {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.single-service img,
+.single-job img {
+    display: block;
+    margin: 2rem auto;
+    border-radius: 12px;
+    max-width: 100%;
+}
+
+.single-job .btn-primary {
+    display: inline-block;
+    margin-top: 2rem;
+    background: #1a73e8;
+    color: #fff;
+    padding: 0.8rem 1.4rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.single-job .btn-primary:hover {
+    background: #155db8;
+}
