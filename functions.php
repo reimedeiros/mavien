@@ -1,15 +1,15 @@
 <?php
 function mavien_enqueue_assets() {
-  wp_enqueue_style('mavien-header', get_template_directory_uri() . '/assets/css/components/header.css');
-  wp_enqueue_style('mavien-footer', get_template_directory_uri() . '/assets/css/components/footer.css');
-  wp_enqueue_style('mavien-home', get_template_directory_uri() . '/assets/css/pages/home.css');
-  wp_enqueue_style('mavien-single', get_template_directory_uri() . '/assets/css/pages/single.css');
-  wp_enqueue_style('mavie-contact', get_template_directory_uri() . '/assets/css/pages/contact.css');
+  wp_enqueue_style('mavien-header', get_template_directory_uri() . '/assets/css/components/header.css', [], '1.0.0');
+  wp_enqueue_style('mavien-footer', get_template_directory_uri() . '/assets/css/components/footer.css', [], '1.0.0');
+  wp_enqueue_style('mavien-home', get_template_directory_uri() . '/assets/css/pages/home.css', [], '1.0.0');
+  wp_enqueue_style('mavien-single', get_template_directory_uri() . '/assets/css/pages/single.css', [], '1.0.4');
+  wp_enqueue_style('mavie-contact', get_template_directory_uri() . '/assets/css/pages/contact.css', [], '1.0.0');
 }
 add_action('wp_enqueue_scripts', 'mavien_enqueue_assets');
 
 function mavien_enqueue_scripts() {
-  wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
+  wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', [], '1.0.3', true);
 }
 add_action('wp_enqueue_scripts', 'mavien_enqueue_scripts');
 

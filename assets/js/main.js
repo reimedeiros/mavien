@@ -2,6 +2,9 @@ class MavienSite {
   constructor() {
     this.header = document.querySelector(".site-header");
     this.contactForm = document.getElementById("contactForm");
+    this.vagaFormBtn = document.getElementById("btn-candidatar");
+    this.vagaForm = document.getElementById("form-candidatar");
+
     this.init();
   }
 
@@ -10,6 +13,7 @@ class MavienSite {
     this.handleSmoothScroll();
     this.handleScrollHeader();
     this.handleFormValidation();
+    this.handleCandidatarForm();
   }
 
   handleMenuToggle() {
@@ -78,6 +82,15 @@ class MavienSite {
         alert("Por favor, insira um número de WhatsApp válido.");
         e.preventDefault();
       }
+    });
+  }
+
+  handleCandidatarForm() {
+    if (!this.vagaFormBtn || !this.vagaForm) return;
+
+    this.vagaFormBtn.addEventListener("click", () => {
+      this.vagaForm.classList.toggle("hidden");
+      this.vagaForm.scrollIntoView({ behavior: "smooth" });
     });
   }
 }
@@ -194,4 +207,5 @@ class MavienForm {
 // Inicializa automaticamente ao carregar o DOM
 document.addEventListener("DOMContentLoaded", () => {
   new MavienForm("contactForm");
+  new MavienForm("form-candidatar");
 });
