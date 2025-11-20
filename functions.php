@@ -48,3 +48,12 @@ function mavien_register_cpt_servicos() {
   register_post_type('mavien-servico', $args);
 }
 add_action('init', 'mavien_register_cpt_servicos');
+
+add_filter('nav_menu_link_attributes', function($atts) {
+
+    if (!empty($atts['href']) && str_starts_with($atts['href'], '#')) {
+        $atts['href'] = home_url( $atts['href'] );
+    }
+
+    return $atts;
+});
